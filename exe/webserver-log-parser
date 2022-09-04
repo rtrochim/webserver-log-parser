@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+$LOAD_PATH.unshift("#{__dir__}/../lib")
+
+require "webserver/log_parser"
+
+parsed_result = Webserver::LogParser.new.parse(ARGV[0])
+
+puts "PAGE VIEWS:"
+puts parsed_result[:page_views]
+puts "\n"
+puts "UNIQUE PAGE VIEWS:"
+puts parsed_result[:unique_page_views]
